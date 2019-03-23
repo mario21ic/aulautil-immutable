@@ -1,11 +1,12 @@
 ---
 - name: Install PHP, Nginx and modules
-  #hosts: all
-  hosts: 127.0.0.1
-  connection: local
+  hosts: all
+  #hosts: 127.0.0.1
+  #connection: local
   become: true
   #become_user: ec2-user
   become_method: sudo
   roles:
     - common
     - nginx
+
