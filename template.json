@@ -23,7 +23,15 @@
     {
       "type": "docker",
       "image": "mario21ic/amazonlinux:1",
-      "commit": true
+      "commit": true,
+      "changes": [
+        "WORKDIR /usr/share/nginx",
+        "ENV MYDOMAIN www.example.com",
+        "VOLUME /app /usr/share/nginx/newvol",
+        "EXPOSE 80 443",
+        "LABEL version=1.0",
+        "CMD [\"nginx\", \"-g\", \"daemon off;\"]"
+      ]
     }
   ],
   "post-processors": [
